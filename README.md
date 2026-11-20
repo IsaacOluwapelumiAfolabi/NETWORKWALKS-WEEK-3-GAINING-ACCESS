@@ -141,7 +141,7 @@ The following screenshots are included as supporting evidence for the activities
 ![Additional Completion](03-additional-completion-redacted.png)
 
 ## Author
-### Emmanuel Afunanya
+### Isaac Afolabi
 
 Cybersecurity Intern, Networkwalks B084
 
