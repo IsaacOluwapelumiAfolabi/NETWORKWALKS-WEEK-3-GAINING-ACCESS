@@ -8,9 +8,7 @@
 | **Pentester Name (Cybersecurity Professional)** | **Isaac Afolabi** |
 | **Program/Batch** | B084-Networkwalks |
 | **Date** | 20 November 2026 |
-| **Modules completed** | W3-PM1 – PDF Password Cracking with John the Ripper and Johnny GUI
-W3-PM2 – PDF Password Cracking with NetworkWalks Tools
- |
+| **Modules completed** | W3-PM1 – PDF Password Cracking with John the Ripper and Johnny GUI W3-PM2 – PDF Password Cracking with NetworkWalks Tools|
 | **Client/Target** |Training-provided password-protected PDF|
 | **Permission / Scope** | Assigned educational lab exercise; testing limited to the supplied PDF file|
 | **Phases covered** | **Phase 3:**  Gaining Access – password recovery exercise<br> |
@@ -67,9 +65,8 @@ training platform.
 
 | **\#** | **Module**                           | **Observed Result**                                  | **Status**                                                                                            |
 |--------|----------------------------------------------|-------------------------------------------------------------|-----------------------------------------------------|
-| 1      | Module 1 – JTR / Johnny          | Johnny GUI reported 1 of 1 PDF hashes cracked and displayed the
-recovered password as good-luck       | Completed |
-| 2      | Module 2 – NetworkWalks               | The password-cracking exercise was completed and three training completion flags were captured in the supplied screenshots.          | Completed |
+| 1      | Module 1 – JTR / Johnny          | Johnny GUI reported 1 of 1 PDF hashes cracked and displayed the recovered password as good-luck       | Completed |
+| 2      | Module 2 – NetworkWalks          | The password-cracking exercise was completed and three training completion flags were captured in the supplied screenshots.      | Completed |
 
 # 6. Risk Analysis / Impact
 
