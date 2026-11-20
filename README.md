@@ -140,6 +140,13 @@ The following screenshots are included as supporting evidence for the activities
 ### Evidence 6 – Additional NetworkWalks completion flag
 ![Additional Completion](03-additional-completion-redacted.png)
 
+## Author
+### Emmanuel Afunanya
 
+Cybersecurity Intern, Networkwalks B084
+
+LinkedIn: [https://www.linkedin.com/in/isaac-afolabi-oluwapelumi/](https://www.linkedin.com/in/isaac-afolabi-oluwapelumi/)
+
+Pentesting Project Report | Networkwalks
 
 -End-
