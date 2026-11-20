@@ -119,7 +119,7 @@ file.
 The following screenshots are included as supporting evidence for the activities described in this report.
 *Screenshots collected as evidence during the activities (stored in the `screenshots/` folder):*
 
-## Evidence 1 – PDF hash extraction using Online Hash Crack
+## Evidence Collected
 
 ### Evidence 1 – PDF hash extraction using Online Hash Crack
 ![NSLOOKUP Result](NSLOOKUPRESULT.png)
