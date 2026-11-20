@@ -122,23 +122,23 @@ The following screenshots are included as supporting evidence for the activities
 ## Evidence Collected
 
 ### Evidence 1 – PDF hash extraction using Online Hash Crack
-![NSLOOKUP Result](NSLOOKUPRESULT.png)
+![Hash Extraction](01-hash-extraction-redacted.png)
 
 ### Evidence 2 – Johnny GUI showing the recovered password and 1/1 cracked result
-![Topology Saveshot](TOPOLOGYSAVESHOT.PNG)
+![Johnny Result](02-johnny-result-redacted.png)
 
 ### Evidence 3 – Password-protected PDF opening prompt
-![WAWOOF Result](WAWOOFRESULT.png)
+![Protected PDF Prompt](03-protected-pdf-prompt.png)
 
 ### Evidence 4 – NetworkWalks training completion flag
-![WhatWeb Result](WHATWEBRESULT.png)
+![Network Walkthrough Completion](01-networkwalks-completion-redacted.png)
 
 ### Evidence 5 – NetworkWalks JTR-related completion flag
-![WHOIS Result 1](WHOISRESULT1.png)
-![WHOIS Result 2](WHOISRESULT2.png)
+![JTR Training Flag](02-jtr-training-flag-redacted.png)
+
 
 ### Evidence 6 – Additional NetworkWalks completion flag
-![DNSRecon Result](dnsreconresult.png)
+![Additional Completion](03-additional-completion-redacted.png)
 
 
 
