@@ -1,27 +1,31 @@
 # PENETRATION TESTING REPORT
-### Footprinting & Network Scanning Phases
+### GAINING ACCESS – PASSWORD CRACKING
 
-**W2-PM-FINAL  |  CYBERSECURITY  |  NETWORKWALKS**
+**W3-PM-FINAL  |  CYBERSECURITY  |  NETWORKWALKS**
 
 | Field | Detail |
 |---|---|
 | **Pentester Name (Cybersecurity Professional)** | **Isaac Afolabi** |
 | **Program/Batch** | B084-Networkwalks |
-| **Date** | 10 November 2026 |
-| **Modules completed** | W2-PM1 (Multiple Kali Tools)<br>W2-PM5 (Zenmap Scanning) |
-| **Client/Target** | 1. Networkwalks (secured written permission already)<br>2. My own local LAN Network |
-| **Permission secured from client?** | Yes |
-| **Phases covered** | **Phase 1:** Reconnaissance & Footprinting<br> **Phase 2:** Scanning & Network Discovery<br>**Phase 3-5:** In Progress |
+| **Date** | 20 November 2026 |
+| **Modules completed** | W3-PM1 – PDF Password Cracking with John the Ripper and Johnny GUI
+W3-PM2 – PDF Password Cracking with NetworkWalks Tools
+ |
+| **Client/Target** |Training-provided password-protected PDF|
+| **Permission / Scope** | Assigned educational lab exercise; testing limited to the supplied PDF file|
+| **Phases covered** | **Phase 3:**  Gaining Access – password recovery exercise<br> |
 
 # 1. Liability Disclaimer
 
-I performed these activities only on systems and devices for which I had secured written permission or that I own. These materials are for educational and research purposes only. Do not use this information to break the law. Unauthorized access may result in criminal or civil penalties. The tester is responsible for ensuring that all activities remain within the approved scope.
+I performed these activities as part of an assigned cybersecurity training exercise and limited the work to the password-protected PDF supplied for the lab. Password recovery and hash-cracking techniques should only be used on files and systems that the tester owns or is explicitly authorized to assess. This report is for educational purposes and does not authorize access to any other file, account, device or system.
 
 # 2. Introduction
 
-This report covers footprinting the networkwalks.com domain using multiple Kali Linux tools (W2-PM1) and scanning my own local network with Zenmap (W2-PM5). One module covers the footprinting phase and the other covers the scanning phase. Together, they demonstrate how a security professional can gather publicly available information about a website and identify live hosts on an authorized local network.
+This report documents my Week 3 practical activities on the third stage of the cyberattack lifecycle: Gaining Access. The focus was password cracking and password recovery using a supplied password-protected PDF file named My Locked PDF1.pdf.
 
-The footprinting activities were performed in Kali Linux, while Zenmap was used on a Windows PC. Each activity below explains the tool or command used, the result observed and why the finding matters from a security-assessment perspective.
+I completed two project modules. In Module 1, I extracted the PDF hash using Online Hash Crack and used John the Ripper through the Johnny graphical interface to recover the password. In Module 2, I used the NetworkWalks Hash Calculator and Password Cracker. I successfully recovered the PDF password during the exercises.
+
+The exercises helped me understand how password-protected files can be assessed through hash extraction and password-recovery tools, and why strong, unique passwords are important.
 
 
 # 3. Tools Used
@@ -30,147 +34,115 @@ The table below lists each tool used in this report and its purpose.
 
 | Tool | Purpose |
 |---|---|
-| Kali Linux & Windows | Operating systems used for reconnaissance activities             |
-| WHOIS                | Find domain registration details (owner, dates, name servers).   |
-| whatweb              | Fingerprint web technologies (server, CMS, plugins, IP).         |
-| nslookup             | Resolve the domain name to its IP address using DNS.             |
-| curl -I              | Read the HTTP response headers of the website.                   |
-| wafw00f              | Detect whether a Web Application Firewall protects the site.     |
-| dnsrecon             | Enumerate all DNS records (NS, MX, SPF, TXT, SRV).               |
-| Zenmap (Nmap GUI)    | Scan the local subnet to find live hosts, IPs and MAC addresses. |
-| Windows CMD          | Local IP and MAC address identification                          |
+| Windows PC | Operating systems used for reconnaissance activities             |
+| Online Hash Crack               | Find domain registration details (owner, dates, name servers).   |
+| John the Ripper (JTR)              | Fingerprint web technologies (server, CMS, plugins, IP).         |
+| Johnny GUI              | Resolve the domain name to its IP address using DNS.             |
+| NetworkWalks Hash Calculator              | Read the HTTP response headers of the website.                   |
+| NetworkWalks Password Cracker             | Detect whether a Web Application Firewall protects the site.     |
+
 
 # 4. Activities Performed
 
-## 4.1 Footprinting & Reconnaissance
+## 4.1 Project Module 1 – PDF Password Cracking with John the Ripper and Johnny GUI
 
-I performed reconnaissance against the `networkwalks.com` domain using six Kali Linux tools: **WHOIS, WhatWeb, Nslookup, Curl, Wafw00f and DNSRecon**. Each tool was used to collect a different type of information about the target.
+**Objective:** Recover the password of the assigned PDF using John the Ripper and its Johnny graphical interface.
 
-First, I used **WHOIS** to obtain publicly available domain registration information and identify the domain’s name servers. The results provided information about the domain registration and hosting infrastructure.
+**Procedure:** I downloaded and installed John the Ripper and Johnny GUI on my Windows PC. I then used Online Hash Crack to extract the hash from My Locked PDF1.pdf. I copied the extracted hash into a text file, loaded that file into Johnny GUI, and initiated the password-recovery process.
 
-I then used **WhatWeb** to identify technologies used by the website. The results identified **WordPress 7.1.4** and **WP Download Manager 3.3.76**, along with other information exposed by the website.
+**Result:** Johnny GUI displayed the recovered password as `**good-luck**` and showed **100%** (1/1: 1 cracked, 0 left) for
+the PDF format. I then attempted to open the protected PDF using the recovered password.
 
-Using **Nslookup**, I resolved the domain name to its IP address. The provided result identified **192.232.216.135**.
+## 4.2 Project Module 2 – PDF Password Cracking with NetworkWalks Tools
 
-I used **Curl** with the `-I` option to inspect the HTTP response headers. This provided additional information about the web application and exposed the WordPress REST API endpoint `/wp-json/`.
+**Objective:** Use the NetworkWalks Hash Calculator and Password Cracker to recover the password of the assigned
+PDF.
 
-Next, I used **Wafw00f** to determine whether a Web Application Firewall was protecting the website. The result identified **ModSecurity (SpiderLabs)**.
+**Procedure:** I opened the NetworkWalks Hash Calculator in a web browser, uploaded the PDF and extracted its hash. I copied the hash value, opened the NetworkWalks Password Cracker, pasted the hash into the tool and started the password-cracking process. The tools used for this module were the NetworkWalks Hash Calculator `(networkwalks.com/hash-calculator)` and the NetworkWalks Password Cracker `(networkwalks.com/password-cracker)`.
 
-Finally, I used **DNSRecon** to enumerate DNS records. The results provided information relating to name servers, mail servers, SPF/TXT records, service records and DNS software information.
+**Result:** I successfully completed the password-recovery exercise and captured the completion flags displayed by the
+training platform.
 
-## 4.2 Network Scanning with Zenmap
+# 5. Results and Evidence Summary
 
-For the second activity, I used **Zenmap** to perform network discovery on my local network. The practical required me to identify my local IP address and subnet, discover live hosts, identify their IP and MAC addresses, and generate a network topology.
+| **\#** | **Module**                           | **Observed Result**                                  | **Status**                                                                                            |
+|--------|----------------------------------------------|-------------------------------------------------------------|-----------------------------------------------------|
+| 1      | Module 1 – JTR / Johnny          | Johnny GUI reported 1 of 1 PDF hashes cracked and displayed the
+recovered password as good-luck       | Completed |
+| 2      | Module 2 – NetworkWalks               | The password-cracking exercise was completed and three training completion flags were captured in the supplied screenshots.          | Completed |
 
-I first used the Windows `ipconfig` command to identify my local IP address and LAN subnet. I then entered the subnet into Zenmap and selected **Ping Scan** to identify active hosts.
-
-The example results provided in the practical identified four live hosts:
-
-- `10.0.0.1`
-- `10.0.0.4`
-- `10.0.0.19`
-- `10.0.0.5`
-
-The example results also included four MAC addresses.
-
-After completing the scan, I opened the **Topology** section in Zenmap, enabled the legend and saved the network topology in PDF format as required by the practical task.
-
-**Note:** The actual subnet, number of hosts and addresses should be replaced with the results from my own network when submitting the report.
-
-# 5. Risk Analysis / Impact
-
-Based on the information collected during the footprinting and network scanning activities, I identified the following potential risks.
+# 6. Risk Analysis / Impact
 
 | **\#** | **Risk / Finding**                           | **Evidence / Observation**                                  | **Potential Impact**                                                                                            | **Risk Level** |
 |--------|----------------------------------------------|-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|----------------|
-| 1      | Web technology information exposed           | WhatWeb identified WordPress and WP Download Manager        | Attackers may use exposed technology/version information to identify software requiring further security review | **● Medium**   |
-| 2      | Server IP address identifiable               | Nslookup resolved the domain to `192.232.216.135`           | Provides information about the network location of the web service                                              | **● Low**      |
-| 3      | HTTP technical information exposed           | Curl returned HTTP response headers and exposed `/wp-json/` | May assist technology fingerprinting and further enumeration                                                    | **● Low**      |
-| 4      | WAF technology identifiable                  | Wafw00f identified ModSecurity (SpiderLabs)                 | Reveals information about the web application’s security architecture                                           | **● Low**      |
-| 5      | DNS infrastructure information exposed       | DNSRecon identified DNS, mail and service-related records   | DNS information can help build a broader infrastructure profile                                                 | **● Medium**   |
-| 6      | Multiple live hosts visible on local network | Zenmap identified four live hosts in the example network    | Unknown or unauthorized devices may potentially be present on a network                                         | **● Medium**   |
+| 1      | Weak or predictable password                 |The lab PDF password was recovered during the exercise         | Weak passwords may be easier to recover,increasing the risk of unauthorized access to protected files.         | **● Medium**   |
+| 2      | Password reuse                               | The learning exercise highlighted the danger of reusing passwords across accounts    | A password exposed on one service may be tried against other accounts.                | **● High**      |
+| 3      | Exposure of password hashes                  | The PDF hash was extracted for password-recovery testing.     | If hashes are exposed, attackers may attempt offline password guessing or cracking.                      | **● Medium**      |
 
 **Risk level key:** ● Critical ● Medium ● Low
 
-The risks above are observations from the footprinting and scanning exercises, not confirmed vulnerabilities.
+Risk levels above are general assessments of the security implications of the demonstrated techniques. They are not findings of a compromise or vulnerability in an external organization or production system.
 
-The practical exercises primarily involved information gathering and host discovery. No exploitation or vulnerability validation was performed as part of these two modules.
+# 7. Recommendations
 
-Therefore, the presence of information such as a software version, IP address or DNS record does not by itself mean that the system is vulnerable. Further authorized security testing would be required to confirm any actual vulnerability.
+Based on the lessons from these exercises, I recommend the following security practices:
 
-# 6. Recommendations
+**1. Use strong, unique passwords.** Create long passwords or passphrases that are difficult to guess and avoid
+using the same password across multiple accounts.
 
-Based on the observations from these activities, I recommend the following security improvements:
+**2. Enable multi-factor authentication.** Add another verification factor to important accounts so that a compromised
+password alone is less likely to provide access.
 
-1.  **Review publicly exposed technology information**  
-    Organizations should regularly review what information about their web technologies, CMS and plugins is publicly visible.
+**3. Use a reputable password manager.** A password manager can help generate and store unique passwords
+securely.
 
-2.  **Keep software updated**  
-    CMS platforms, plugins and other web technologies should be regularly updated and reviewed against current security advisories.
+**4. Protect password hashes and sensitive files.** Limit access to stored credentials and protected documents, and
+use secure storage and appropriate encryption.
 
-3.  **Review HTTP headers**  
-    HTTP response headers should be reviewed to determine whether unnecessary technical information is being exposed.
+**5. Apply secure password storage practices.** For applications, store passwords using a purpose-built
+password-hashing algorithm with unique salts and suitable work factors rather than reversible encryption or fast
+general-purpose hashes.
 
-4.  **Review DNS records regularly**  
-    DNS records should be checked periodically to ensure that only required information and services are publicly exposed.
+**6. Conduct authorized password audits.** Organizations should periodically assess password strength within a
+clearly approved scope and handle recovered credentials securely.
 
-5.  **Properly configure and monitor the WAF**  
-    Keep the WAF (ModSecurity) enabled and tuned, since it already blocks naive attacks.
+# 8. Conclusion
 
-6.  **Perform regular internal network discovery**  
-    Organizations should periodically scan their own networks to identify active devices.
+During Week 3 of my Cybersecurity and Ethical Hacking internship, I studied the Gaining Access stage of the cyberattack lifecycle, focusing on password cracking and password security.
 
-7.  **Investigate unknown devices**  
-    Any unexpected device discovered during network scanning should be investigated and verified.
+I completed two practical modules. In Module 1, I used Online Hash Crack to extract a PDF hash and John the Ripper through Johnny GUI to recover the password. The Johnny interface reported that one out of one PDF hashes had been cracked and displayed the recovered password. In Module 2, I used the NetworkWalks Hash Calculator and Password Cracker and successfully completed the exercise, capturing the training platform's completion flags.
 
-8.  **Maintain network documentation**  
-    Network topology and device information should be documented and updated regularly.
+These activities improved my understanding of hash extraction, password-recovery tools, and the risks associated with weak or reused passwords. I also learned that password cracking tools can be used by security professionals for authorized password auditing and awareness training.
 
-9.  **Perform security testing with authorization**  
-    Reconnaissance and scanning should only be performed against systems and networks where appropriate authorization has been provided.
+All practical activities documented in this report were limited to the assigned training exercise and the supplied PDF
+file.
 
-# 7. Conclusion
+# 9. Evidences Collected
 
-During Week 2 of my Cybersecurity and Ethical Hacking internship, I completed practical activities covering footprinting, reconnaissance and network scanning.
-
-In the footprinting activity, I used six Kali Linux tools to collect information about networkwalks.com. I learned how WHOIS provides domain registration information, WhatWeb identifies web technologies, nslookup resolves domain names, curl inspects HTTP headers, WAFW00F identifies a WAF and DNSRecon provides additional DNS information.
-
-In the network scanning activity, I used Zenmap to scan my local subnet. The ping scan identified eight live hosts, and the results provided IP addresses and MAC information for seven hosts. I also viewed the network topology in Zenmap.
-
-These exercises showed me that information gathering is an important part of cybersecurity. Before attempting any deeper assessment, a security professional can learn about a target's public-facing technologies and the devices present on an authorized network. I also learned that findings should be documented accurately, including evidence gaps and the limits of each tool.
-
-Finally, reconnaissance and scanning must always be performed within an authorized scope. These activities were completed as part of the assigned educational cybersecurity lab.
-
-# 8. Evidences Collected
-
+The following screenshots are included as supporting evidence for the activities described in this report.
 *Screenshots collected as evidence during the activities (stored in the `screenshots/` folder):*
 
-## Reconnaissance & Scan Results
+## Evidence 1 – PDF hash extraction using Online Hash Crack
 
-### NSLOOKUP Result
+### Evidence 1 – PDF hash extraction using Online Hash Crack
 ![NSLOOKUP Result](NSLOOKUPRESULT.png)
 
-### Topology Saveshot
+### Evidence 2 – Johnny GUI showing the recovered password and 1/1 cracked result
 ![Topology Saveshot](TOPOLOGYSAVESHOT.PNG)
 
-### WAFW00F Result
+### Evidence 3 – Password-protected PDF opening prompt
 ![WAWOOF Result](WAWOOFRESULT.png)
 
-### WhatWeb Result
+### Evidence 4 – NetworkWalks training completion flag
 ![WhatWeb Result](WHATWEBRESULT.png)
 
-### WHOIS Results
+### Evidence 5 – NetworkWalks JTR-related completion flag
 ![WHOIS Result 1](WHOISRESULT1.png)
 ![WHOIS Result 2](WHOISRESULT2.png)
 
-### DNSRecon Result
+### Evidence 6 – Additional NetworkWalks completion flag
 ![DNSRecon Result](dnsreconresult.png)
 
-### cURL Result
-![cURL Result](CURLRESULT.png)
-
-### IP Scan Result
-![IP Scan Result](TASK3IPSCAN.PNG)
 
 
 -End-
