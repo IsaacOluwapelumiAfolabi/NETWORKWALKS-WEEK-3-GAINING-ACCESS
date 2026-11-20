@@ -1,0 +1,9 @@
+# Sensitive or local files
+*.hash
+*.pot
+*.john
+*.pdf
+*.docx
+.env
+.DS_Store
+Thumbs.db
