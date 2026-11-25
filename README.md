@@ -33,11 +33,11 @@ The table below lists each tool used in this report and its purpose.
 | Tool | Purpose |
 |---|---|
 | Windows PC | Operating systems used for reconnaissance activities             |
-| Online Hash Crack               | Find domain registration details (owner, dates, name servers).   |
-| John the Ripper (JTR)              | Fingerprint web technologies (server, CMS, plugins, IP).         |
-| Johnny GUI              | Resolve the domain name to its IP address using DNS.             |
-| NetworkWalks Hash Calculator              | Read the HTTP response headers of the website.                   |
-| NetworkWalks Password Cracker             | Detect whether a Web Application Firewall protects the site.     |
+| Online Hash Crack               | Crack the document hash.   |
+| John the Ripper (JTR)              | crach the document hash.         |
+| Johnny GUI              | JTR GUI             |
+| NetworkWalks Hash Calculator              | Generate document hash                  |
+| NetworkWalks Password Cracker             | Ctack document hash   |
 
 
 # 4. Activities Performed
